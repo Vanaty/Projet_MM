@@ -14,5 +14,10 @@ class Panier_model extends CI_Model {
     public function get_paniers() {
         return $this->db->get('panier')->result_array();
     }
+
+    public function delete_panier($id) {
+        $this->db->where('id', $id);
+        return $this->db->delete('panier');
+    }
 }
 ?>
